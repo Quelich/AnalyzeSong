@@ -4,9 +4,24 @@ using System.IO;
 namespace IOReader {
     public class Program {
         //TODO add AI framework to detect the curses
+        /// <summary>
+        /// Execution processor
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main (string[] args) {
-
+            string[] lines = { "100", "150", "200", "Third" };
+            using (StreamWriter file = new StreamWriter (@"D:\GitRepos\FileIOc\IOReader\myFile.txt")) {
+                foreach (var line in lines) {
+                    if (line.Contains ("Third")) {
+                        file.WriteLine (line);
+                    }
+                }
+            }
+            using (StreamWriter file = new StreamWriter (@"D:\GitRepos\FileIOc\IOReader\myFile.txt", true)) {
+                file.WriteLine ("Additional test line");
+            }
         }
+
         /// <summary>
         /// Simple .txt reader
         /// </summary>
