@@ -25,18 +25,8 @@ namespace IOReader
            new DataEmotions("Shame", (int)Emotion_Reference.Shame, 50f),
            new DataEmotions("Shyness", (int)Emotion_Reference.Shyness, 55f),
            new DataEmotions("Guilt", (int)Emotion_Reference.Guilt, 60f),
-           
         };
-        public void ReferCounter(List<int> _counters)
-        {
-            if (_counters != null)
-            {
-                foreach (int _counter in _counters)
-                {
-                   
-                } 
-            }
-        }
+      
         //METHOD #1
         public static void StreamWriter()
         {
