@@ -9,22 +9,25 @@ namespace IOReader
             Interest, Joy, Surprise, Sadness, Anger, Disgust, Contempt, Self_Hostility, Fear, Shame, Shyness, Guilt
         }
         
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value> reference emotions[x]</value>
         protected static List<DataEmotions> emotions = new List<DataEmotions>
         {
             //TODO auto-incremental id
-           new DataEmotions("Interest", (int)Emotion_Reference.Interest, 5f),
-           new DataEmotions("Joy", (int)Emotion_Reference.Joy, 10f),
-           new DataEmotions("Surprise", (int)Emotion_Reference.Surprise, 15f),
-           new DataEmotions("Sadness", (int)Emotion_Reference.Sadness, 20f),
-           new DataEmotions("Anger", (int)Emotion_Reference.Anger, 25f),
-           new DataEmotions("Disgust", (int)Emotion_Reference.Disgust, 30f),
-           new DataEmotions("Contempt", (int)Emotion_Reference.Contempt, 35f),
-           new DataEmotions("SHostility", (int)Emotion_Reference.Self_Hostility, 40f),
-           new DataEmotions("Fear", (int)Emotion_Reference.Fear, 45f),
-           new DataEmotions("Shame", (int)Emotion_Reference.Shame, 50f),
-           new DataEmotions("Shyness", (int)Emotion_Reference.Shyness, 55f),
-           new DataEmotions("Guilt", (int)Emotion_Reference.Guilt, 60f),
+           new DataEmotions("Interest", (int)Emotion_Reference.Interest, 5f ),//emotions[0]
+           new DataEmotions("Joy", (int)Emotion_Reference.Joy, 10f),//emotions[1]
+           new DataEmotions("Surprise", (int)Emotion_Reference.Surprise, 15f),//emotions[2]
+           new DataEmotions("Sadness", (int)Emotion_Reference.Sadness, 20f),//emotions[3]
+           new DataEmotions("Anger", (int)Emotion_Reference.Anger, 25f),//emotions[4]
+           new DataEmotions("Disgust", (int)Emotion_Reference.Disgust, 30f),//emotions[5]
+           new DataEmotions("Contempt", (int)Emotion_Reference.Contempt, 35f),//emotions[6]
+           new DataEmotions("SHostility", (int)Emotion_Reference.Self_Hostility, 40f),//emotions[7]
+           new DataEmotions("Fear", (int)Emotion_Reference.Fear, 45f),//emotions[8]
+           new DataEmotions("Shame", (int)Emotion_Reference.Shame, 50f),//emotions[9]
+           new DataEmotions("Shyness", (int)Emotion_Reference.Shyness, 55f),//emotions[10]
+           new DataEmotions("Guilt", (int)Emotion_Reference.Guilt, 60f),//emotions[11]
         };
       
         //METHOD #1
@@ -54,8 +57,9 @@ namespace IOReader
         {
             //! You need to key in the direction of the file yet
             string Text = File.ReadAllText(_path);
+            System.Console.WriteLine("********************************");
             Console.WriteLine($"{Text}");
-            System.Console.WriteLine("***************");
+            System.Console.WriteLine("********************************");
             Parse(Text);
             Console.ReadKey();
         }
@@ -76,10 +80,7 @@ namespace IOReader
             string[] parsedPhrase = toParse.Split(' ');
             foreach (var element in parsedPhrase)
             {
-               if (element == "gone")
-               {
-                    
-               }
+               
                
             }
             

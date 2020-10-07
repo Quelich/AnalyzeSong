@@ -5,16 +5,17 @@ using IOReader;
 //TODO main purpose :: examine lyrics of a song
 namespace IOReader {
     public class Program : Utils {
-        //TODO add AI framework to detect the curses
-        
-        
+        //TODO add ML.NET framework to detect the curses and to do more
         public static void Main (string[] args) {
-            string songPath = @"D:\GitRepos\FileIOc\IOReader\FinalSong.txt"; //TODO find a way to get the path of the file from the user directly
+            //string songPath = @"D:\GitRepos\FileIOc\IOReader\FinalSong.txt"; 
+            string songPath = Console.ReadLine();
             if (songPath != null)
             {
-                //IOReader(songPath);
+                System.Console.WriteLine("Song Path is {0}", songPath);
+                IOReader(songPath);
+                
             }
-            System.Console.WriteLine(emotions[0].Point + emotions[1].Point); 
+            //System.Console.WriteLine(emotions[0].Point + emotions[1].Point); 
            
         }
        
