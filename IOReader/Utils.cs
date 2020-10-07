@@ -10,13 +10,13 @@ namespace IOReader
         }
         
         /// <summary>
-        /// 
+        /// Contains data about emotions
         /// </summary>
         /// <value> reference emotions[x]</value>
         protected static List<DataEmotions> emotions = new List<DataEmotions>
         {
             //TODO auto-incremental id
-           new DataEmotions("Interest", (int)Emotion_Reference.Interest, 5f ),//emotions[0]
+           new DataEmotions("Interest", (int)Emotion_Reference.Interest, 5f),//emotions[0]
            new DataEmotions("Joy", (int)Emotion_Reference.Joy, 10f),//emotions[1]
            new DataEmotions("Surprise", (int)Emotion_Reference.Surprise, 15f),//emotions[2]
            new DataEmotions("Sadness", (int)Emotion_Reference.Sadness, 20f),//emotions[3]
@@ -29,7 +29,15 @@ namespace IOReader
            new DataEmotions("Shyness", (int)Emotion_Reference.Shyness, 55f),//emotions[10]
            new DataEmotions("Guilt", (int)Emotion_Reference.Guilt, 60f),//emotions[11]
         };
-      
+        public static Dictionary<int, string[]> _indicatorWords = new Dictionary<int, string[]>();
+        public static void InitIndicators()
+        {
+            _indicatorWords.Add(emotions[0].ID, new string[2] {"impressive", "amazing"});
+            foreach (KeyValuePair<int, string[]> keyValuePair in _indicatorWords)
+            {
+                System.Console.WriteLine($" Key:{keyValuePair.Key} | Value:{keyValuePair.Value[0]}");
+            }
+        }
         //METHOD #1
         public static void StreamWriter()
         {
@@ -60,28 +68,28 @@ namespace IOReader
             System.Console.WriteLine("********************************");
             Console.WriteLine($"{Text}");
             System.Console.WriteLine("********************************");
-            Parse(Text);
+            Detection(Text);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Simple .txt data writer 
         /// </summary>
-        public static void IOWriter(string[] _parsedPhrase)
+        public static void IOWriter(string _fileDir, string[] _parsedPhrase)
         {
-            string[] lines = { "Hello", "This is Emre", "Just having fun with it" };
             //! You need to key in the direction of the file yet
-            File.WriteAllLines(@"D:\GitRepos\FileIOc\IOReader\WrittenText.txt", lines);
+            //File.WriteAllLines(@"D:\GitRepos\FileIOc\IOReader\WrittenText.txt", _parsedPhrase);
+            File.WriteAllLines(_fileDir, _parsedPhrase);
         }
 
-        public static void Parse(string _phrase)
+        public static void Detection(string _phrase)
         {
             string toParse = _phrase;
             string[] parsedPhrase = toParse.Split(' ');
             foreach (var element in parsedPhrase)
             {
                
-               
+               //TODO make word check
             }
             
         }

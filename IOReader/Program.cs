@@ -7,7 +7,9 @@ namespace IOReader {
     public class Program : Utils {
         //TODO add ML.NET framework to detect the curses and to do more
         public static void Main (string[] args) {
-            //string songPath = @"D:\GitRepos\FileIOc\IOReader\FinalSong.txt"; 
+            InitIndicators();
+            //string songPath = @"D:\GitRepos\FileIOc\IOReader\FinalSong.txt";
+            System.Console.WriteLine("Please give the song's file directory"); 
             string songPath = Console.ReadLine();
             if (songPath != null)
             {
@@ -15,8 +17,8 @@ namespace IOReader {
                 IOReader(songPath);
                 
             }
-            //System.Console.WriteLine(emotions[0].Point + emotions[1].Point); 
-           
+            System.Console.WriteLine(emotions[0].Point + emotions[1].Point); 
+          
         }
        
     }
