@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using IOReader;
-//TODO Add Indicator for emotions
+
 namespace IOReader
 {
     public class DataEmotions {
