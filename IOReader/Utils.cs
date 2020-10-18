@@ -18,7 +18,13 @@ namespace IOReader {
             Shyness,
             Guilt
         }
-
+        /// <summary>
+        /// Dictionary of the Indicator words to compare the words of song
+        /// </summary>
+        /// <typeparam name="int"> Key</typeparam>
+        /// <typeparam name="string[]"> Value </typeparam>
+        /// <returns>null</returns>
+        public static Dictionary<int, string[]> _indicatorWords = new Dictionary<int, string[]>();
         /// <summary>
         /// Contains data about emotions
         /// </summary>
@@ -38,16 +44,7 @@ namespace IOReader {
             new SentimentData ("Shyness", (int) Emotion_Reference.Shyness, 55f), //emotions[10]
             new SentimentData ("Guilt", (int) Emotion_Reference.Guilt, 60f), //emotions[11]
         };
-        /// <summary>
-        /// Dictionary of the Indicator words to compare the words of song
-        /// </summary>
-        /// <typeparam name="int"> Key</typeparam>
-        /// <typeparam name="string[]"> Value </typeparam>
-        /// <returns>null</returns>
-        public static Dictionary<int, string[]> _indicatorWords = new Dictionary<int, string[]> ();
        
-        
-
         #region Writers #7fe5f0
         /// <summary>
         /// Uses Stream writer to reach the directory and gets it into a new file
@@ -100,7 +97,34 @@ namespace IOReader {
             }
 
         }
+        /// <summary>
+        /// To get a random song for the day
+        /// </summary>
+        /// <typeparam name="string">song path</typeparam>
+        /// <returns></returns>
+        #region RandomSong
         
+        public delegate void InitDir(); // Want to call _songDirInit via a delegate 
+        public static Random myRandom = new Random();
+
+        public static Dictionary<int, string> _songDir = new Dictionary<int, string>();
+
+        public static void _songDirInit()
+        {
+            _songDir.Add(0,@"D:\GitRepos\FileIOc\IOReader\Songs\FinalSong.txt");
+            _songDir.Add(1,@"D:\GitRepos\FileIOc\IOReader\Songs\Ritual_RitaOra.txt");
+            _songDir.Add(2,@"D:\GitRepos\FileIOc\IOReader\Songs\Swizznife - Moments ft. JAYNIE.txt");
+
+        }
+        public static int GetRandomSong(int min, int max)
+        {
+            if ( min >= 0 && max >= 0)
+            {
+                return myRandom.Next(min, max);
+            }
+            return -1;
+        } 
         
+        #endregion
     }
 }

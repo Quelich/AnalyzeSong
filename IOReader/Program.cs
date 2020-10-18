@@ -3,23 +3,31 @@ using System.IO;
 using System.Collections.Generic;
 using IOReader;
 
-//TODO main purpose :: examine lyrics of a song
+
 namespace IOReader {
     public class Program : Utils {
-        //TODO add ML.NET framework to detect the curses and to do more
+        public static InitDir initSongDir = _songDirInit;
         public static void Main (string[] args) {
+            
+            initSongDir();
             for (int i = 0; i < _indicatorWords.Count; i++)
             {
                 System.Console.WriteLine(_indicatorWords[emotions[i].ID]);
             }
-            //string songPath = @"D:\GitRepos\FileIOc\IOReader\FinalSong.txt";
-            System.Console.WriteLine("Please give the song's file directory"); 
-            string songPath = Console.ReadLine();
+            //System.Console.WriteLine("Please give the song's file directory");
+            string songPath = _songDir[GetRandomSong(0, _songDir.Count-1)]; // Getting random song lyrics
             if (songPath != null)
             {
-                System.Console.WriteLine("Song Path is {0}", songPath);
+                Console.BackgroundColor = ConsoleColor.Blue;
+                Console.ForegroundColor = ConsoleColor.White;
+                string songTitle = "Today's song is " + songPath;
+                Console.Title = songTitle;
+                System.Console.WriteLine(songTitle);
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.White;
                 IOReader(songPath);
-            }
+                Console.ResetColor();
+            }           
         }
     }
 }
