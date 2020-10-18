@@ -5,13 +5,13 @@ using IOReader;
 
 namespace IOReader
 {
-    public class DataEmotions {
+    public class SentimentData {
         public string Name { get; set; } 
         public int ID { get; set; }
         public float Point { get; set; } // Will be given a point with respect to Emotion
         
-        public DataEmotions(){}
-        public DataEmotions(string _name, int _id, float _point) {
+        public SentimentData(){}
+        public SentimentData(string _name, int _id, float _point) {
             this.Name = _name;
             this.ID = _id;
             this.Point = _point;

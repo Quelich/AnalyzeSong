@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 namespace IOReader {
+    
     public class Utils {
         public enum Emotion_Reference {
             Interest,
@@ -22,20 +23,20 @@ namespace IOReader {
         /// Contains data about emotions
         /// </summary>
         /// <value> reference emotions[x]</value>
-        protected static List<DataEmotions> emotions = new List<DataEmotions> {
+        public static List<SentimentData> emotions = new List<SentimentData> {
 
-            new DataEmotions ("Interest", (int) Emotion_Reference.Interest, 5f), //emotions[0]
-            new DataEmotions ("Joy", (int) Emotion_Reference.Joy, 10f), //emotions[1]
-            new DataEmotions ("Surprise", (int) Emotion_Reference.Surprise, 15f), //emotions[2]
-            new DataEmotions ("Sadness", (int) Emotion_Reference.Sadness, 20f), //emotions[3]
-            new DataEmotions ("Anger", (int) Emotion_Reference.Anger, 25f), //emotions[4]
-            new DataEmotions ("Disgust", (int) Emotion_Reference.Disgust, 30f), //emotions[5]
-            new DataEmotions ("Contempt", (int) Emotion_Reference.Contempt, 35f), //emotions[6]
-            new DataEmotions ("SHostility", (int) Emotion_Reference.Self_Hostility, 40f), //emotions[7]
-            new DataEmotions ("Fear", (int) Emotion_Reference.Fear, 45f), //emotions[8]
-            new DataEmotions ("Shame", (int) Emotion_Reference.Shame, 50f), //emotions[9]
-            new DataEmotions ("Shyness", (int) Emotion_Reference.Shyness, 55f), //emotions[10]
-            new DataEmotions ("Guilt", (int) Emotion_Reference.Guilt, 60f), //emotions[11]
+            new SentimentData ("Interest", (int) Emotion_Reference.Interest, 5f), //emotions[0]
+            new SentimentData ("Joy", (int) Emotion_Reference.Joy, 10f), //emotions[1]
+            new SentimentData ("Surprise", (int) Emotion_Reference.Surprise, 15f), //emotions[2]
+            new SentimentData ("Sadness", (int) Emotion_Reference.Sadness, 20f), //emotions[3]
+            new SentimentData ("Anger", (int) Emotion_Reference.Anger, 25f), //emotions[4]
+            new SentimentData ("Disgust", (int) Emotion_Reference.Disgust, 30f), //emotions[5]
+            new SentimentData ("Contempt", (int) Emotion_Reference.Contempt, 35f), //emotions[6]
+            new SentimentData ("SHostility", (int) Emotion_Reference.Self_Hostility, 40f), //emotions[7]
+            new SentimentData ("Fear", (int) Emotion_Reference.Fear, 45f), //emotions[8]
+            new SentimentData ("Shame", (int) Emotion_Reference.Shame, 50f), //emotions[9]
+            new SentimentData ("Shyness", (int) Emotion_Reference.Shyness, 55f), //emotions[10]
+            new SentimentData ("Guilt", (int) Emotion_Reference.Guilt, 60f), //emotions[11]
         };
         /// <summary>
         /// Dictionary of the Indicator words to compare the words of song
@@ -45,24 +46,7 @@ namespace IOReader {
         /// <returns>null</returns>
         public static Dictionary<int, string[]> _indicatorWords = new Dictionary<int, string[]> ();
        
-        /// <summary>
-        /// Initializes all Emotions at the beginning of the program
-        /// </summary>
-        public static void InitAll()
-        {
-            InitInterest();
-                InitJoy();
-            InitSurprise();
-                InitSadness();
-            InitAnger();
-                InitDisgust();
-            InitContempt();
-                InitSHostility();
-            InitFear();
-                InitShame();
-            InitShyness();
-                InitGuilt();
-        }
+        
 
         #region Writers #7fe5f0
         /// <summary>
@@ -116,23 +100,7 @@ namespace IOReader {
             }
 
         }
-        /// <summary>
-        /// Initialization of each emotion one by one, ju
-        /// </summary>
-        #region InitEmotions #ff0067
-        public static void InitInterest() => _indicatorWords.Add(emotions[0].ID, new string[2] { "impressive", "amazing" });
-        public static void InitJoy() => _indicatorWords.Add(emotions[1].ID, new string[2] { "impressive", "amazing" });
-        public static void InitSurprise() => _indicatorWords.Add(emotions[2].ID, new string[2] { "impressive", "amazing" });
-        public static void InitSadness() => _indicatorWords.Add(emotions[3].ID, new string[2] { "impressive", "amazing" });
-        public static void InitAnger() => _indicatorWords.Add(emotions[4].ID, new string[2] { "impressive", "amazing" });
-        public static void InitDisgust() => _indicatorWords.Add(emotions[5].ID, new string[2] { "impressive", "amazing" });
-        public static void InitContempt() => _indicatorWords.Add(emotions[6].ID, new string[2] { "impressive", "amazing" });
-        public static void InitSHostility() => _indicatorWords.Add(emotions[7].ID, new string[2] { "impressive", "amazing" });
-        public static void InitFear() => _indicatorWords.Add(emotions[8].ID, new string[2] { "impressive", "amazing" });
-        public static void InitShame() => _indicatorWords.Add(emotions[9].ID, new string[2] { "impressive", "amazing" });
-        public static void InitShyness() => _indicatorWords.Add(emotions[10].ID, new string[2] { "impressive", "amazing" });
-        public static void InitGuilt() => _indicatorWords.Add(emotions[11].ID, new string[2] { "impressive", "amazing" });
-        #endregion
+        
         
     }
 }
