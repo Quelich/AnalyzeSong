@@ -111,10 +111,17 @@ namespace IOReader {
 
         public static void _songDirInit()
         {
-            _songDir.Add(0,@"D:\GitRepos\FileIOc\IOReader\Songs\FinalSong.txt");
-            _songDir.Add(1,@"D:\GitRepos\FileIOc\IOReader\Songs\Ritual_RitaOra.txt");
-            _songDir.Add(2,@"D:\GitRepos\FileIOc\IOReader\Songs\Swizznife - Moments ft. JAYNIE.txt");
+            // _songDir.Add(0,@"D:\GitRepos\FileIOc\IOReader\Songs\FinalSong.txt");
+            // _songDir.Add(1,@"D:\GitRepos\FileIOc\IOReader\Songs\Ritual_RitaOra.txt");
+            // _songDir.Add(2,@"D:\GitRepos\FileIOc\IOReader\Songs\Swizznife - Moments ft. JAYNIE.txt");
 
+        }
+        public static void ShowLibrary()
+        {
+            foreach (var item in _songDir)
+            {
+                System.Console.WriteLine(item);
+            }
         }
         public static int GetRandomSong(int min, int max)
         {
