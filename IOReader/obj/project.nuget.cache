@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "WG+XVN903U/XWmXVpSe9yaGmFPpRnV+P/HNirLU/U1ih1Lp4e/U9pP5rHwboopNMpMt7p6d3rqCggNLXRSwfXw==",
+  "dgSpecHash": "VReo5S1rnDNJteQBbc4Ilaw3GxK/GnKaodfUGzIxgGPqskRkZesDbke5sfmcfI6uOeqX/Kj45b7hmhE7LYJRUQ==",
   "success": true,
   "projectFilePath": "D:\\GitRepos\\FileIOc\\IOReader\\IOReader.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.9\\microsoft.netcore.app.host.win-x64.3.1.9.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -11,13 +11,13 @@ namespace IOReader
             System.Console.WriteLine("Welcome to your daily song lyrics");
             System.Console.WriteLine("To add song directory - Press B");
             System.Console.WriteLine("To show your lyrics library - Press N");
-            string input = Console.ReadLine();
+            ConsoleKey input = Console.ReadKey();
             
-            if (input != null)
+            if (input is ConsoleKey)
             {
                 switch (input)
                 {
-                    case "B":
+                    case input.Key.:
                     System.Console.WriteLine("Write down lyrics directory");
                     string lyricsDir = Console.ReadLine();
                         for (int i = 0; i < Int32.MaxValue; i++)

@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json; // Just tried if it works
 using System.IO;
 using System.Collections.Generic;
 using IOReader;
@@ -26,7 +27,7 @@ namespace IOReader {
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.ForegroundColor = ConsoleColor.White;
                 IOReader(songPath);
-                Console.ResetColor();
+                Console.ResetColor(); 
             }           
         }
     }
