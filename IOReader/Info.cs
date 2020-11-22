@@ -4,15 +4,17 @@ using System.IO;
 using IOReader;
 namespace IOReader
 {
-    public class Info {
-        protected static Utils myUtil = new Utils();
-        public static void UserInfo()
+    public class Info : Utils{
+        
+        public ConsoleKey input;
+        public void UserInfo()
         {
             
             System.Console.WriteLine("Welcome to your daily song lyrics");
-            System.Console.WriteLine("To add song directory - Press B");
-            System.Console.WriteLine("To show your lyrics library - Press N");
-            ConsoleKey input = Console.ReadKey().Key; // just trying different methods 
+            System.Console.WriteLine("To add song directory - Press <B>");
+            System.Console.WriteLine("To show your lyrics library - Press <N>");
+            System.Console.WriteLine("To exit - Press <Esc>");
+            myInfo.input = Console.ReadKey().Key; // just trying different methods 
             
             if (input != null)
             {
@@ -28,6 +30,9 @@ namespace IOReader
                         break;
                     case ConsoleKey.N:
                         myUtil.ShowLibrary();
+                        break;
+                    case ConsoleKey.Escape:
+                        System.Console.WriteLine("Shutting Down");
                         break;
                     default:
                     System.Console.WriteLine("Invalid Input");

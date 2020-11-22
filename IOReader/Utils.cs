@@ -4,7 +4,13 @@ using System.IO;
 namespace IOReader {
     
     public class Utils {
+        protected static Utils myUtil = new Utils();
+        protected static Info myInfo = new Info();
+
         public Dictionary<int, string> _songDir = new Dictionary<int, string>();
+        
+        
+        public static Random myRandom = new Random();
         public enum Emotion_Reference {
             Interest,
             Joy,
@@ -46,10 +52,8 @@ namespace IOReader {
             new SentimentData ("Guilt", (int) Emotion_Reference.Guilt, 60f), //emotions[11]
         };
        
-        #region Writers #7fe5f0
-        /// <summary>
-        /// Uses Stream writer to reach the directory and gets it into a new file
-        /// </summary>
+        #region Writers 
+       
         public void StreamWriter () {
             string[] lines = { "100", "150", "200", "Third" };
             using (StreamWriter file = new StreamWriter (@"D:\GitRepos\FileIOc\IOReader\FinalSong.txt")) {
@@ -63,24 +67,20 @@ namespace IOReader {
                 file.WriteLine ("Additional test line");
             }
         }
-        /// <summary>
-        /// Simple .txt data writer 
-        /// </summary>
+      
         public void IOWriter(string _fileDir, string[] _parsedPhrase)
         {
-            //! You need to key in the direction of the file yet
+         
             //File.WriteAllLines(@"D:\GitRepos\FileIOc\IOReader\WrittenText.txt", _parsedPhrase);
             File.WriteAllLines(_fileDir, _parsedPhrase);
         }
         #endregion
 
-        #region Readers #f6d61a
-        /// <summary>
-        /// Simple .txt reader
-        /// </summary>
+        #region Readers 
+       
         public void IOReader(string _path)
         {
-            //! You need to key in the direction of the file yet
+          
             string Text = File.ReadAllText(_path);
             System.Console.WriteLine("********************************");
             Console.WriteLine($"{Text}");
@@ -98,18 +98,8 @@ namespace IOReader {
             }
 
         }
-        /// <summary>
-        /// To get a random song for the day
-        /// </summary>
-        /// <typeparam name="string">song path</typeparam>
-        /// <returns></returns>
+      
         #region RandomSong
-        
-        public delegate void InitDir(); // Want to call _songDirInit via a delegate 
-        public static Random myRandom = new Random();
-
-        
-
         public void _songDirInit()
         {
             _songDir.Add(0,@"D:\GitRepos\FileIOc\IOReader\Songs\FinalSong.txt");
@@ -131,8 +121,6 @@ namespace IOReader {
             }
             return -1;
         } 
-        
-
         #endregion
     }
 }
