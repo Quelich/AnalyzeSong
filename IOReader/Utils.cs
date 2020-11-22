@@ -4,6 +4,7 @@ using System.IO;
 namespace IOReader {
     
     public class Utils {
+        public Dictionary<int, string> _songDir = new Dictionary<int, string>();
         public enum Emotion_Reference {
             Interest,
             Joy,
@@ -29,7 +30,7 @@ namespace IOReader {
         /// Contains data about emotions
         /// </summary>
         /// <value> reference emotions[x]</value>
-        public static List<SentimentData> emotions = new List<SentimentData> {
+        public List<SentimentData> emotions = new List<SentimentData> {
 
             new SentimentData ("Interest", (int) Emotion_Reference.Interest, 5f), //emotions[0]
             new SentimentData ("Joy", (int) Emotion_Reference.Joy, 10f), //emotions[1]
@@ -49,7 +50,7 @@ namespace IOReader {
         /// <summary>
         /// Uses Stream writer to reach the directory and gets it into a new file
         /// </summary>
-        public static void StreamWriter () {
+        public void StreamWriter () {
             string[] lines = { "100", "150", "200", "Third" };
             using (StreamWriter file = new StreamWriter (@"D:\GitRepos\FileIOc\IOReader\FinalSong.txt")) {
                 foreach (var line in lines) {
@@ -65,7 +66,7 @@ namespace IOReader {
         /// <summary>
         /// Simple .txt data writer 
         /// </summary>
-        public static void IOWriter(string _fileDir, string[] _parsedPhrase)
+        public void IOWriter(string _fileDir, string[] _parsedPhrase)
         {
             //! You need to key in the direction of the file yet
             //File.WriteAllLines(@"D:\GitRepos\FileIOc\IOReader\WrittenText.txt", _parsedPhrase);
@@ -77,7 +78,7 @@ namespace IOReader {
         /// <summary>
         /// Simple .txt reader
         /// </summary>
-        public static void IOReader(string _path)
+        public void IOReader(string _path)
         {
             //! You need to key in the direction of the file yet
             string Text = File.ReadAllText(_path);
@@ -89,7 +90,7 @@ namespace IOReader {
         }
         #endregion
       
-        public static void Detection (string _phrase) {
+        public void Detection (string _phrase) {
             string toParse = _phrase;
             string[] parsedPhrase = toParse.Split (' ');
             foreach (var element in parsedPhrase) {
@@ -107,23 +108,22 @@ namespace IOReader {
         public delegate void InitDir(); // Want to call _songDirInit via a delegate 
         public static Random myRandom = new Random();
 
-        public static Dictionary<int, string> _songDir = new Dictionary<int, string>();
+        
 
-        public static void _songDirInit()
+        public void _songDirInit()
         {
-            // _songDir.Add(0,@"D:\GitRepos\FileIOc\IOReader\Songs\FinalSong.txt");
-            // _songDir.Add(1,@"D:\GitRepos\FileIOc\IOReader\Songs\Ritual_RitaOra.txt");
-            // _songDir.Add(2,@"D:\GitRepos\FileIOc\IOReader\Songs\Swizznife - Moments ft. JAYNIE.txt");
-
+            _songDir.Add(0,@"D:\GitRepos\FileIOc\IOReader\Songs\FinalSong.txt");
+            _songDir.Add(1,@"D:\GitRepos\FileIOc\IOReader\Songs\Ritual_RitaOra.txt");
+            _songDir.Add(2,@"D:\GitRepos\FileIOc\IOReader\Songs\Swizznife - Moments ft. JAYNIE.txt");
         }
-        public static void ShowLibrary()
+        public void ShowLibrary()
         {
             foreach (var item in _songDir)
             {
                 System.Console.WriteLine(item);
             }
         }
-        public static int GetRandomSong(int min, int max)
+        public int GetRandomSong(int min, int max)
         {
             if ( min >= 0 && max >= 0)
             {
@@ -132,6 +132,7 @@ namespace IOReader {
             return -1;
         } 
         
+
         #endregion
     }
 }

@@ -7,16 +7,18 @@ using IOReader;
 //TODO Get Url Content(song lyrics) in advance
 namespace IOReader {
     public class Program : Utils {
-        public static InitDir initSongDir = _songDirInit;
+        protected static Utils myUtil = new Utils();
+        public InitDir initSongDir = myUtil._songDirInit;
         public static void Main (string[] args) {
+           
             Info.UserInfo(); // directly 
-            initSongDir();
+            myUtil._songDirInit();
             for (int i = 0; i < _indicatorWords.Count; i++)
             {
-                System.Console.WriteLine(_indicatorWords[emotions[i].ID]);
+                System.Console.WriteLine(_indicatorWords[myUtil.emotions[i].ID]);
             }
             
-            string songPath = _songDir[GetRandomSong(0, _songDir.Count-1)]; // Getting random song lyrics
+            string songPath = myUtil._songDir[myUtil.GetRandomSong(0, myUtil._songDir.Count-1)]; // Getting random song lyrics
             if (songPath != null)
             {
                 Console.BackgroundColor = ConsoleColor.Blue;
@@ -26,8 +28,9 @@ namespace IOReader {
                 System.Console.WriteLine(songTitle);
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.ForegroundColor = ConsoleColor.White;
-                IOReader(songPath);
-                Console.ResetColor(); 
+                myUtil.IOReader(songPath);
+                Console.ResetColor();
+                
             }           
         }
     }

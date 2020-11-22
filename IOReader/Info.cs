@@ -5,28 +5,29 @@ using IOReader;
 namespace IOReader
 {
     public class Info {
-        
+        protected static Utils myUtil = new Utils();
         public static void UserInfo()
         {
+            
             System.Console.WriteLine("Welcome to your daily song lyrics");
             System.Console.WriteLine("To add song directory - Press B");
             System.Console.WriteLine("To show your lyrics library - Press N");
-            ConsoleKey input = Console.ReadKey();
+            ConsoleKey input = Console.ReadKey().Key; // just trying different methods 
             
-            if (input is ConsoleKey)
+            if (input != null)
             {
                 switch (input)
                 {
-                    case input.Key.:
+                    case ConsoleKey.B:
                     System.Console.WriteLine("Write down lyrics directory");
                     string lyricsDir = Console.ReadLine();
                         for (int i = 0; i < Int32.MaxValue; i++)
                         {
-                            Utils._songDir.Add(i, lyricsDir);
+                            myUtil._songDir.Add(i, lyricsDir);
                         }
                         break;
-                    case "N":
-                        Utils.ShowLibrary();
+                    case ConsoleKey.N:
+                        myUtil.ShowLibrary();
                         break;
                     default:
                     System.Console.WriteLine("Invalid Input");

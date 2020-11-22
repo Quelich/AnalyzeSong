@@ -11,3 +11,5 @@ D:\GitRepos\FileIOc\IOReader\obj\Debug\netcoreapp3.1\IOReader.csproj.CoreCompile
 D:\GitRepos\FileIOc\IOReader\obj\Debug\netcoreapp3.1\IOReader.dll
 D:\GitRepos\FileIOc\IOReader\obj\Debug\netcoreapp3.1\IOReader.pdb
 D:\GitRepos\FileIOc\IOReader\obj\Debug\netcoreapp3.1\IOReader.genruntimeconfig.cache
+D:\GitRepos\FileIOc\IOReader\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\GitRepos\FileIOc\IOReader\obj\Debug\netcoreapp3.1\IOReader.csproj.CopyComplete
