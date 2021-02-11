@@ -1,2 +1,3 @@
 # Welcome to AnalyzeSong
-It will be injected into a WPF Framework soon
+It will be set up into a WPF Framework soo
+
